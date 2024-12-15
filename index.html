@@ -1,46 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Page</title>
-  <link href="dist/tailwind.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anthony Paul | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fixed Video Container */
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1920px; /* Fixed width */
+            height: 1080px; /* Fixed height */
+            min-width: 1920px; /* Prevent scaling below video size */
+            min-height: 1080px; /* Prevent scaling below video size */
+            z-index: 0; /* Behind the text */
+        }
+
+        #hero-section {
+            position: relative;
+            height: 100vh; /* Full screen height */
+            overflow: hidden;
+        }
+
+        /* Styling for individual project cards */
+        .project-card {
+            max-width: 700px; /* Set a smaller width for each project */
+            background-color: #2d3748; /* Bluish-gray background */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ensure scrolling is smooth */
+        body {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
-  <div class="flex items-center justify-center min-h-screen">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-4">Hello, World!</h1>
-      <p class="text-lg text-gray-400">Welcome to my personal page.</p>
-      <a
-        href="#projects"
-        class="mt-6 inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold"
-      >
-        View My Projects
-      </a>
-    </div>
-  </div>
+<body class="bg-gray-800">
+    <!-- Hero Section -->
+    <section id="hero-section" class="flex flex-col justify-center items-center text-center">
+        <!-- Video Background -->
+        <video id="hero-video" autoplay loop muted>
+            <source src="assets/bgvideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Text Content -->
+        <div class="relative z-10">
+            <h1 class="text-4xl font-bold text-white mb-4">Hi there</h1>
+            <h2 class="text-2xl text-gray-300">Here is where I keep my stuff</h2>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">My Projects</h2>
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Project 1 -->
+                <div class="project-card mx-auto">
+                    <h3 class="text-xl font-semibold text-white">
+                        <a
+                          href="https://github.com/fleshmetal/extendedstreamingtools"
+                          class="hover:underline text-blue-400"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Spotify Extended Streaming History Tools
+                        </a>
+                    </h3>
+                    <p class="text-gray-400 mt-2">
+                        A set of tools to process, observe, and manage Extended Streaming History Data.
+                    </p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card mx-auto">
+                    <h3 class="text-xl font-semibold text-white">
+                        <a
+                          href="https://github.com/fleshmetal/anotherproject"
+                          class="hover:underline text-blue-400"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Another Awesome Project
+                        </a>
+                    </h3>
+                    <p class="text-gray-400 mt-2">
+                        A brief description of another cool project that you have been working on.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-
-<section id="projects" class="py-20 bg-gray-800">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold text-white mb-8">My Projects</h2>
-    <div class="grid grid-cols-1 gap-6">
-      <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold text-white">
-          <a
-            href="https://github.com/your-repo-name"
-            class="hover:underline text-blue-400"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Project Name
-          </a>
-        </h3>
-        <p class="text-gray-400 mt-2">Description of the project. Briefly explain what it does or why it's useful.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 </html>
